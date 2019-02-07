@@ -1,0 +1,378 @@
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	font-family: 'Noto Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+} 
+
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+
+
+/* landing page */
+
+#front {
+	height: 90vh;
+	background: url(https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b116b6efb341717a04244b7443659d6e&auto=format&fit=crop&w=1500&q=80) no-repeat;
+	font-size: 30px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.frontText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: white;
+	text-align: center;
+
+}
+
+/* navbar */
+nav {
+	height: 10vh;
+	width: 100%;
+	background-color: #191b1f;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30px;
+	position: relative;
+	top: 0;
+	z-index: 1;
+}
+
+nav li {
+	display: inline-block;
+	font-size: 19px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.4rem;
+	padding: 0 14px;
+}
+
+nav li:hover {
+	transition: all 0.5s;
+	transform: scale(1.1); 
+}
+
+nav ul a:hover {
+	border-bottom: 1px solid grey;
+	color: grey;
+}
+
+
+.brand {
+	font-size: 30px;
+	text-transform: uppercase;
+    font-weight: 600;
+	letter-spacing: 0.3rem;   
+}
+
+
+.fixed-nav nav  {
+	position: fixed;
+}
+
+/* about section*/
+
+#about{
+	background-color: white;
+	height: 420px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+#about h2 {
+	text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-size: 40px;
+    margin-bottom: 18px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    font-weight: 400;
+}
+
+#about p {
+	padding: 0 5%;
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 0.09rem
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.line {
+	border-bottom: 1px solid #949393;
+    width: 60%;
+    margin: 0 20%;
+}
+
+/* modal */
+
+.portfolio-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    z-index: 2;
+	display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.modal-content {
+	position: absolute;
+	left: 50%;
+    top: 50%;
+	transform: translate(-50%,-50%);
+	padding: 2rem;
+	border-radius: 1rem;
+	background-color: white;
+	color: black;
+}
+
+.closeBtn {
+	float: right;
+	background-color: lightgray;
+	cursor: pointer;
+	width: 1rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    line-height: 1.1rem;
+}
+
+.closeBtn:hover {
+	background-color: darkgray;
+}
+
+/* portfolio */
+
+
+#portfolio{
+	background-color: white;
+	padding-bottom: 90px;
+    padding-top: 20px;
+
+}
+#portfolio ul{
+	display:grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(2, auto);
+	grid-row-gap: 50px;
+	padding-left: 0;
+	width: 80%;
+	margin: 0 auto;
+}
+#portfolio h1{
+    margin: 0;
+    padding: 60px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-size: 40px;
+    margin-bottom: 18px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    font-weight: 400;
+}
+#portfolio img{
+	border-radius: 6px;
+	width: 280px;
+    height: 230px;
+    box-shadow: 8px 8px 10px #aaa;
+}
+#portfolio li {
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	flex-direction: column;
+}
+
+.slide-in {
+	opacity:0;
+	transition:all .5s;
+}
+.align-left.slide-in {
+	transform:translateX(-30%) scale(0.95);
+}
+.align-right.slide-in {
+	transform:translateX(30%) scale(0.95);
+}
+.align-center-top.slide-in {
+	transform: translateY(-30%) scale(0.95);
+}
+.align-center-bottom.slide-in {
+	transform: translateY(30%) scale(0.95);
+}
+.slide-in.active {
+	opacity:1;
+	transform:translateX(0%) scale(1);
+}
+
+.projectName {
+	font-size: 25px;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    margin-top: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    background-color: black;
+	color: white;
+	transform: scale(1.05);
+}
+
+button:focus{
+	outline: none;
+}
+
+
+
+/*Contact page*/
+
+#contact{
+	display: grid;
+	grid-template-columns: 60% 30%;
+	grid-template-rows: auto;
+	background-color: white;
+	height: 420px;
+}
+#contact .container{
+	align-self: center;
+	text-align: right;
+	padding-left: 60px;
+}
+#contact ul{
+	font-size: 30px;
+	align-self: center;
+}
+
+#contact a{
+	color: #4c4141;
+}
+
+.quote {
+	padding-left: 70px;
+}
+
+
+footer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: #191b1f; 
+	color: white;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 1020px){
+
+#portfolio ul{
+	display:grid;
+	grid-template-columns: repeat(2, auto);
+	grid-template-rows: repeat(3, auto);
+	padding-left: 0;
+}
+
+}
+
+@media screen and (max-width: 875px) {
+.navbar {
+	display: flex;
+	flex-direction: column;
+	padding: 0 30px;
+}
+.navbar ul {
+	display: flex;
+	justify-content: center;
+	padding-left: 0;
+}
+.brand {
+	text-align: center;
+	margin: 0;
+    padding-top: 20px;
+}
+
+.front{
+	height: 580px;
+}
+
+.frontContainer {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.frontText {
+	padding-bottom: 100px;
+}
+}
+
+
+@media screen and (max-width: 700px){
+
+#portfolio ul{
+	display:grid;
+	grid-template-columns: repeat(1, auto);
+	grid-template-rows: repeat(6, auto);
+	padding-left: 0;
+}
+
+}
+
+@media screen and (max-width: 655px) {
+
+footer {
+	display: flex;
+	flex-direction: column;
+}
+
+footer ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-left: 0;
+
+}
+footer p{
+	text-align: center;
+	padding-right: 0;
+}
+
+}
+
+
+
