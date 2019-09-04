@@ -69,9 +69,6 @@ DOMStrings.closeBtns.forEach(btn => addEventListener('click', closeModal));
 DOMStrings.modalBkGrd.forEach(el => addEventListener('click', outsideClick));
 
 // identify which is the correct element and then get the element by the id - then we should be able to access the correct classlist to display
-
-// I have no idea if this is the best way but eventually it worked
-
 function openModal(e) {
   if (e.target.className === "modalBtn") {
     const modalNum = e.target.parentNode.dataset.modalnum;

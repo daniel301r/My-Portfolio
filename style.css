@@ -21,12 +21,18 @@ a{
 	color: white;
 }
 
+.pageContainer {
+	display: flex;
+	flex-direction: column;
+}
+
 
 /* landing page */
 
 #front {
 	height: 90vh;
-	background: url(https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b116b6efb341717a04244b7443659d6e&auto=format&fit=crop&w=1500&q=80) no-repeat;
+	background: url(https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80) no-repeat;
+	background-size: cover;
 	font-size: 30px;
 	color: white;
 	display: flex;
@@ -41,7 +47,11 @@ a{
 	justify-content: center;
 	color: white;
 	text-align: center;
+	text-shadow: 2px 2px 2px #868E91;
+}
 
+.frontText h4 {
+	margin-top: 0;
 }
 
 /* navbar */
@@ -96,10 +106,15 @@ nav ul a:hover {
 	background-color: white;
 	height: 420px;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	text-align: center;
+	margin-bottom: 20px;
 }
+
+#about > * {
+	width: 50%
+}
+
 #about h2 {
 	text-transform: uppercase;
     letter-spacing: 0.25rem;
@@ -113,8 +128,12 @@ nav ul a:hover {
 	padding: 0 5%;
     font-size: 19px;
     font-weight: 400;
-    letter-spacing: 0.09rem
+    letter-spacing: 0.09rem;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.skillsContainer span {
+	font-weight: bold;
 }
 
 .line {
@@ -133,8 +152,7 @@ nav ul a:hover {
 	height: 100%;
     z-index: 2;
 	display: none;
-    background-color: rgba(0, 0, 0, 0.8);
-
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
@@ -146,6 +164,10 @@ nav ul a:hover {
 	border-radius: 1rem;
 	background-color: white;
 	color: black;
+}
+
+.modal-content a {
+	color: #5d4ed0;
 }
 
 .closeBtn {
@@ -167,7 +189,7 @@ nav ul a:hover {
 
 #portfolio{
 	background-color: white;
-	padding-bottom: 90px;
+	padding-bottom: 80px;
     padding-top: 20px;
 
 }
@@ -176,32 +198,41 @@ nav ul a:hover {
 	grid-template-columns: repeat(3, auto);
 	grid-template-rows: repeat(2, auto);
 	grid-row-gap: 50px;
-	padding-left: 0;
 	width: 80%;
 	margin: 0 auto;
 }
 #portfolio h1{
     margin: 0;
-    padding: 60px 0;
+    padding: 50px 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.25rem;
     font-size: 40px;
-    margin-bottom: 18px;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
     font-weight: 400;
 }
 #portfolio img{
 	border-radius: 6px;
 	width: 280px;
-    height: 230px;
-    box-shadow: 8px 8px 10px #aaa;
+	height: 230px;
+	box-shadow: 6px 4px 19px 1px #000000;
+	transition-duration: 0.4s;
 }
+
+#portfolio img:hover{
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
 #portfolio li {
 	display: flex;
 	justify-content: center;
 	align-items: center; 
 	flex-direction: column;
+}
+
+.portfolioImg {
+	grid-column: span 2;
 }
 
 .slide-in {
@@ -230,6 +261,7 @@ nav ul a:hover {
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 }
 
+/* can take the buttons away now */
 button {
     background-color: white;
     border: 2px solid black;
@@ -239,7 +271,6 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     transition-duration: 0.4s;
     margin-top: 18px;
     font-family: 'Noto Sans', sans-serif;
@@ -248,7 +279,7 @@ button {
 }
 
 button:hover {
-    background-color: black;
+    background-color: #5a5a5a45;
 	color: white;
 	transform: scale(1.05);
 }
@@ -266,7 +297,7 @@ button:focus{
 	grid-template-columns: 60% 30%;
 	grid-template-rows: auto;
 	background-color: white;
-	height: 420px;
+	height: 380px;
 }
 #contact .container{
 	align-self: center;
@@ -282,20 +313,6 @@ button:focus{
 	color: #4c4141;
 }
 
-.quote {
-	padding-left: 70px;
-}
-
-
-footer{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	background-color: #191b1f; 
-	color: white;
-}
-
-
 /* media queries */
 
 @media screen and (max-width: 1020px){
@@ -309,7 +326,12 @@ footer{
 
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 880px) {
+	
+}
+
+
+@media screen and (max-width: 780px) {
 .navbar {
 	display: flex;
 	flex-direction: column;
@@ -326,6 +348,10 @@ footer{
     padding-top: 20px;
 }
 
+.brandSml {
+	text-transform: uppercase;
+}
+
 .front{
 	height: 580px;
 }
@@ -339,10 +365,6 @@ footer{
 .frontText {
 	padding-bottom: 100px;
 }
-}
-
-
-@media screen and (max-width: 700px){
 
 #portfolio ul{
 	display:grid;
@@ -353,23 +375,18 @@ footer{
 
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: 480px) {
 
-footer {
-	display: flex;
-	flex-direction: column;
+.brand {
+	display: none;
 }
 
-footer ul{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	padding-left: 0;
-
+.navMenu {
+	display: none;
 }
-footer p{
-	text-align: center;
-	padding-right: 0;
+
+.brandSml, .navMenuSml {
+	display: block;
 }
 
 }
