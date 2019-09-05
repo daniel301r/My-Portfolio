@@ -2,7 +2,8 @@ const DOMStrings = {
   navBar: document.getElementById("navBar"),
   modalBtns: document.querySelectorAll('.modalBtn'),
   closeBtns: document.querySelectorAll('.closeBtn'),
-  modalBkGrd: document.querySelectorAll('.portfolio-modal')
+  modalBkGrd: document.querySelectorAll('.portfolio-modal'),
+  navMenuSml: document.querySelector('.navMenuSml')
 }
 
 
@@ -94,6 +95,11 @@ function outsideClick(e) {
   }
 }
 
+DOMStrings.navMenuSml.addEventListener('click', openSmlMenu);
+
+function openSmlMenu(e) {
+  console.log('clicking bitch!!')
+}
 
 
 
