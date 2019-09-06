@@ -3,7 +3,8 @@ const DOMStrings = {
   modalBtns: document.querySelectorAll('.modalBtn'),
   closeBtns: document.querySelectorAll('.closeBtn'),
   modalBkGrd: document.querySelectorAll('.portfolio-modal'),
-  navMenuSml: document.querySelector('.navMenuSml')
+  navMenuSml: document.querySelector('.navMenuSml'),
+  smlNavLinks: document.querySelector('.smlNavLinks')
 }
 
 
@@ -45,12 +46,19 @@ function checkslide() {
 
 window.addEventListener('scroll', debounce(checkslide));
 
-/* sticky navbar */
+/* sticky navbar + menu */
 const topOfNav = DOMStrings.navBar.offsetTop;
+
+// trying this out
+
+const topOfNavMenu = DOMStrings.smlNavLinks.offsetTop;
 
 function fixNav(e) {
   if(window.scrollY >= topOfNav){
     document.body.style.paddingTop = DOMStrings.navBar.offsetHeight + 'px';
+    // navLinks
+    document.body.style.paddingTop = DOMStrings.smlNavLinks.offsetHeight + 'px';
+    
     document.body.classList.add('fixed-nav'); 
   } else {
     document.body.style.paddingTop = 0;
@@ -80,7 +88,6 @@ function openModal(e) {
 // close the modal - do the reverse of open
 function closeModal(e) {
   if (e.target.className === "closeBtn"){
-
     const modalNum = e.target.parentNode.parentNode.id;
     const modal = document.getElementById(modalNum);
     modal.style.display = "none";
@@ -97,8 +104,13 @@ function outsideClick(e) {
 
 DOMStrings.navMenuSml.addEventListener('click', openSmlMenu);
 
-function openSmlMenu(e) {
-  console.log('clicking bitch!!')
+function openSmlMenu() {
+  const smlMenu = DOMStrings.smlNavLinks;
+  if (smlMenu.style.display === "flex") {
+    smlMenu.style.display = "none";
+  } else {
+    smlMenu.style.display = "flex";
+  }
 }
 
 

@@ -95,10 +95,67 @@ nav ul a:hover {
 	letter-spacing: 0.3rem;   
 }
 
+.brandSml {
+	display: none;
+	font-size: 1.2rem;
+	letter-spacing: -0.05rem;
+    font-weight: 800;
+}
+
 
 .fixed-nav nav  {
 	position: fixed;
 }
+
+.fixed-nav .smlNavLinks{
+	position: fixed;
+	top: 0;
+}
+
+.fa-bars {
+	color: white;
+    font-size: 1.5rem;
+}
+
+.navMenuSml {
+	display: none;
+	margin-right: 1rem;
+}
+
+.navMenuSml:hover {
+	cursor: pointer;	
+}
+
+.smlNavLinks{
+	display: none;
+    flex-direction: column;
+	align-items: flex-end;
+	margin: 0;
+    padding: 0;
+}
+
+
+
+.smlNavLinks li {
+	width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.smlNavLinks a:hover {
+	transition: all 0.5s;
+	transform: scale(1.1); 
+}
+
+.smlNavLinks a {
+	float: right;
+	padding: 1rem;
+	color: black;
+	font-size: 1.15rem;
+    font-weight: bold;
+}
+
+
+
 
 /* about section*/
 
@@ -315,41 +372,29 @@ button:focus{
 
 /* media queries */
 
-@media screen and (max-width: 1020px){
-
-#portfolio ul{
-	display:grid;
-	grid-template-columns: repeat(2, auto);
-	grid-template-rows: repeat(3, auto);
-	padding-left: 0;
-}
-
-}
-
 @media screen and (max-width: 880px) {
-	
+
+nav {
+	padding-left: 30px; 
+	padding-right: 0; 
 }
 
 
-@media screen and (max-width: 780px) {
-.navbar {
-	display: flex;
-	flex-direction: column;
-	padding: 0 30px;
-}
-.navbar ul {
-	display: flex;
-	justify-content: center;
-	padding-left: 0;
-}
 .brand {
 	text-align: center;
 	margin: 0;
-    padding-top: 20px;
 }
 
 .brandSml {
-	text-transform: uppercase;
+	display: none;
+}
+
+.navMenu {
+	display: none;
+}
+
+.navMenuSml {
+	display: flex;
 }
 
 .front{
@@ -385,24 +430,12 @@ button:focus{
 	display: none;
 }
 
-.fa-bars {
-	color: white;
-    font-size: 1.5rem;
-}
-
 .navMenuSml {
 	display: block;	
 }
 
-.navMenuSml:hover {
-	cursor: pointer;	
-}
-
 .brandSml {
 	display: block;
-	font-size: 1.2rem;
-	letter-spacing: -0.05rem;
-    font-weight: 800;
 }
 
 #about {
@@ -418,8 +451,6 @@ button:focus{
 	display: flex;
 	flex-direction: column;
 }
-
-
 
 }
 
