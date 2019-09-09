@@ -49,16 +49,11 @@ window.addEventListener('scroll', debounce(checkslide));
 /* sticky navbar + menu */
 const topOfNav = DOMStrings.navBar.offsetTop;
 
-// trying this out
 
-const topOfNavMenu = DOMStrings.smlNavLinks.offsetTop;
 
 function fixNav(e) {
-  if(window.scrollY >= topOfNav){
+  if(window.scrollY >= topOfNav){  
     document.body.style.paddingTop = DOMStrings.navBar.offsetHeight + 'px';
-    // navLinks
-    document.body.style.paddingTop = DOMStrings.smlNavLinks.offsetHeight + 'px';
-    
     document.body.classList.add('fixed-nav'); 
   } else {
     document.body.style.paddingTop = 0;
@@ -68,7 +63,6 @@ function fixNav(e) {
 window.addEventListener('scroll', fixNav);
 
 /* modals for projects */
-
 
 // listen for open click
 DOMStrings.modalBtns.forEach(btn => addEventListener('click', openModal));
